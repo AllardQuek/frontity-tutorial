@@ -13,7 +13,6 @@ const list = ({ state, actions }) => {
                     return (
                         <Link key={item.id} link={post.link}>
                             {post.title.rendered}
-                            <br />
                         </Link> 
                     )
                 })}   

@@ -41,6 +41,7 @@ const Root = ({ state, actions }) => {
           <nav>
             <Menu>
               <Link link="/">Home</Link>
+              <Link link="/destinations">Destinations</Link>
               <Link link="/about-us">About us</Link>
             </Menu>
           </nav>
@@ -52,6 +53,7 @@ const Root = ({ state, actions }) => {
               <List when={data.isArchive} />
               <Post when={data.isPost}>This is a post</Post>
               <Page when={data.isPage}>This is a page</Page>
+              <Page when={data.isDestinations} />
           </Switch>
       </Main>
     </>
