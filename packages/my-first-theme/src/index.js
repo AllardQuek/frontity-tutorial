@@ -9,11 +9,15 @@ const myFirstTheme = {
   },
   state: {
     theme: {
-
+      isUrlVisible: false,
     },
   },
   actions: {
-    theme: {},
+    theme: {
+      toggleUrl: ({ state }) => {
+        state.theme.isUrlVisible = !state.theme.isUrlVisible
+      },
+    },
   },
 }
 
