@@ -6,6 +6,7 @@ import Link from "@frontity/components/link"
 import Switch from "@frontity/components/switch"
 import List from "./list"
 import Post from "./post"
+import Page from "./page"
 
 
 const Root = ({ state }) => {
@@ -27,7 +28,7 @@ const Root = ({ state }) => {
           <Switch>
               <List when={data.isArchive} />
               <Post when={data.isPost}>This is a post</Post>
-              <Post when={data.isPage}>This is a page</Post>
+              <Page when={data.isPage}>This is a page</Page>
           </Switch>
       </main>
     </>
