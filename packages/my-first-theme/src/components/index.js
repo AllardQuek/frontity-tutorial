@@ -1,12 +1,14 @@
 // File: /packages/my-first-theme/src/components/index.js
 
 import React from "react"
-import { connect, Global, css, styled } from "frontity" 
+import { connect, Global, css, styled, Head } from "frontity" 
 import Link from "@frontity/components/link"
 import Switch from "@frontity/components/switch"
 import List from "./list"
 import Post from "./post"
 import Page from "./page"
+import Loading from "./loading"
+import Error from "./error"
 
 
 const Root = ({ state, actions }) => {
@@ -14,10 +16,15 @@ const Root = ({ state, actions }) => {
 
   return (
     <>
-      <head>
+      <Head>
+        <title>My First Frontity Theme</title>
+        <meta
+          name="description"
+          content="Based on the Frontity step by step tutorial"
+        />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
-      </head>
+      </Head>
       <Global
         styles={css`
           * {
@@ -49,11 +56,13 @@ const Root = ({ state, actions }) => {
       </Header>
       <hr />
       <Main>
-          <Switch>
+          <Switch>  {/* Display the first component that satisfies condition */}
+              <Loading when={data.isFetching} />
               <List when={data.isArchive} />
-              <Post when={data.isPost}>This is a post</Post>
-              <Page when={data.isPage}>This is a page</Page>
+              <Post when={data.isPost} />
+              <Page when={data.isPage} />
               <Page when={data.isDestinations} />
+              <Error when={data.isError} />
           </Switch>
       </Main>
     </>
