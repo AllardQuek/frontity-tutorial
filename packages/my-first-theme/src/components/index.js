@@ -49,7 +49,7 @@ const Root = ({ state, actions }) => {
             <Menu>
               <Link link="/">Home</Link>
               <Link link="/destinations">Destinations</Link>
-              <Link link="/about-us">About us</Link>
+              <Link link="/about-us">About</Link>
             </Menu>
           </nav>
         </HeaderContent>
